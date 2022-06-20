@@ -85,7 +85,14 @@ module.exports = configure(function (ctx) {
         type: 'http'
       },
       port: 8080,
-      open: false
+      open: false,
+      onAfterSetupMiddleware: function (devServer) {
+        if (!devServer) throw new Error('webpack-dev-server is not defined')
+        const stack = devServer.app._router.stack
+        const re = /(\.hot-update\.json|\.js\.map)$/
+        const item = stack.find(({ regexp }) => regexp.toString() === re.toString())
+        if (item) stack.splice(stack.indexOf(item), 1)
+      },
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
