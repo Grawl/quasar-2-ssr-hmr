@@ -1,26 +1,33 @@
-# Quasar App (quasar)
+# Quasar App (quasar-2-ssr-hmr)
 
-A Quasar Framework app
+A Quasar Project
 
 ## Install the dependencies
 ```bash
 yarn
+# or
+npm install
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn dev
 ```
+
 
 ### Lint the files
 ```bash
 yarn lint
+# or
+npm run lint
 ```
+
+
 
 ### Build the app for production
 ```bash
-quasar build
+yarn build
 ```
 
 ### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
